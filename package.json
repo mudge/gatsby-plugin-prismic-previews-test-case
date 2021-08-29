@@ -12,11 +12,22 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "test": "jest"
   },
   "dependencies": {
     "gatsby": "^3.12.1",
+    "gatsby-plugin-image": "^1.12.0",
+    "gatsby-plugin-prismic-previews": "^4.1.2",
+    "gatsby-source-prismic": "^4.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^27.1.0",
+    "babel-preset-gatsby": "^1.12.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.1.0",
+    "react-test-renderer": "^17.0.2"
   }
 }

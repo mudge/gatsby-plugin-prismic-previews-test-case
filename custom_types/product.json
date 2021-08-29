@@ -1,0 +1,376 @@
+{
+  "Basic Info": {
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Product Name"
+      }
+    },
+    "introduction": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Card text"
+      }
+    },
+    "description": {
+      "type": "Text",
+      "config": {
+        "label": "Hero text"
+      }
+    },
+    "obsolescence_date": {
+      "type": "Date",
+      "config": {
+        "label": "Obsolescence Date"
+      }
+    },
+    "is_primary_product": {
+      "type": "Select",
+      "config": {
+        "options": ["No", "Yes"],
+        "default_value": "No",
+        "label": "Is Primary Product?"
+      }
+    }
+  },
+  "Page Meta": {
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Page Title"
+      }
+    },
+    "slug": {
+      "type": "Text",
+      "config": {
+        "label": "Product Slug"
+      }
+    },
+    "meta_description": {
+      "type": "Text",
+      "config": {
+        "label": "Meta description"
+      }
+    }
+  },
+  "Images": {
+    "featured_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": null,
+          "height": null
+        },
+        "thumbnails": [],
+        "label": "Featured Image"
+      }
+    },
+    "images": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "image": {
+            "type": "Image",
+            "config": {
+              "constraint": {
+                "width": null,
+                "height": null
+              },
+              "thumbnails": [
+                {
+                  "name": "thumb",
+                  "width": 120,
+                  "height": 80
+                }
+              ],
+              "label": "Image"
+            }
+          }
+        },
+        "label": "Images"
+      }
+    }
+  },
+  "Variants": {
+    "variants": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "variant_name": {
+            "type": "Text",
+            "config": {
+              "label": "Variant Name"
+            }
+          },
+          "reseller_api_product_id": {
+            "type": "Text",
+            "config": {
+              "label": "Reseller API Product ID"
+            }
+          }
+        },
+        "label": "Product Variants"
+      }
+    }
+  },
+  "Page Slices": {
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "image___text": [],
+          "image_and_text_slice": [],
+          "column_slice": []
+        },
+        "choices": {
+          "text_slice": {
+            "type": "Slice",
+            "fieldset": "Text Slice",
+            "description": "Adds generic \"title + text\" content",
+            "icon": "format_color_text",
+            "display": "list",
+            "non-repeat": {
+              "slice_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "slice_title"
+                }
+              },
+              "slice_content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "slice_content"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "video_slice": {
+            "type": "Slice",
+            "fieldset": "Video Slice",
+            "description": "Add a video with an optional title",
+            "icon": "ondemand_video",
+            "display": "list",
+            "non-repeat": {
+              "video_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "video_title"
+                }
+              },
+              "video_embed": {
+                "type": "Embed",
+                "config": {
+                  "label": "video_embed"
+                }
+              },
+              "custom_thumbnail": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Custom thumbnail"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "related_products_slice": {
+            "type": "Slice",
+            "fieldset": "Related Products Slice",
+            "description": "Add a list of related products",
+            "icon": "add_shopping_cart",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {}
+          },
+          "documents_slice": {
+            "type": "Slice",
+            "fieldset": "Documents Slice",
+            "description": "Adds a list of links to documents",
+            "icon": "picture_as_pdf",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "document_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Document Title"
+                }
+              },
+              "document_url": {
+                "type": "Text",
+                "config": {
+                  "label": "document_url"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "Related Products": {
+    "related_products": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "product": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["product"],
+              "label": "Product"
+            }
+          }
+        },
+        "label": "Related Products"
+      }
+    }
+  },
+  "Marketing Slices": {
+    "body1": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "full_width_image": [],
+          "50_50_image_text": [],
+          "two_column_text": []
+        },
+        "choices": {
+          "full_width_image": {
+            "type": "Slice",
+            "fieldset": "Full Width Image",
+            "description": "Displays an image at full width",
+            "icon": "image",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "50_50_image_text": {
+            "type": "Slice",
+            "fieldset": "Image and Text",
+            "description": "Displays text, an image and an optional heading",
+            "icon": "broken_image",
+            "display": "list",
+            "non-repeat": {
+              "slice_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Title"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": null
+                  },
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "image_on_right": {
+                "type": "Boolean",
+                "config": {
+                  "placeholder_false": "Left",
+                  "placeholder_true": "Right",
+                  "default_value": false,
+                  "label": "Image location"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item",
+                  "label": "Content"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "two_column_text": {
+            "type": "Slice",
+            "fieldset": "Two Text Blocks",
+            "description": "Display two text blocks, side by side or stacked depending on window size",
+            "icon": "view_column",
+            "display": "list",
+            "non-repeat": {
+              "slice_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Title"
+                }
+              },
+              "left_column": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item",
+                  "label": "First block"
+                }
+              },
+              "right_column": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item",
+                  "label": "Second block"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "video_slice": {
+            "type": "Slice",
+            "fieldset": "Video Slice",
+            "description": "Add a video with an optional title",
+            "icon": "ondemand_video",
+            "display": "list",
+            "non-repeat": {
+              "video_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "video_title"
+                }
+              },
+              "video_embed": {
+                "type": "Embed",
+                "config": {
+                  "label": "video_embed"
+                }
+              },
+              "custom_thumbnail": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Custom thumbnail"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

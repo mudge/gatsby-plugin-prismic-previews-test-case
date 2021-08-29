@@ -1,0 +1,59 @@
+{
+  "Main": {
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Name"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, hyperlink, list-item, o-list-item, o-list-item",
+        "label": "Description"
+      }
+    },
+    "products": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "product": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["product"],
+              "label": "Product"
+            }
+          }
+        },
+        "label": "Products"
+      }
+    },
+    "older_products": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "product": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["product"],
+              "label": "Product"
+            }
+          },
+          "end_of_life": {
+            "type": "Boolean",
+            "config": {
+              "placeholder_false": "Not end-of-life",
+              "placeholder_true": "End-of-life",
+              "default_value": false,
+              "label": "End of Life?"
+            }
+          }
+        },
+        "label": "Older Products"
+      }
+    }
+  }
+}

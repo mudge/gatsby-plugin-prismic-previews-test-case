@@ -1,0 +1,38 @@
+{
+  "Main": {
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [
+          {
+            "name": "thumb",
+            "width": 120,
+            "height": 80
+          }
+        ],
+        "label": "Image"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title"
+      }
+    },
+    "description": {
+      "type": "Text",
+      "config": {
+        "label": "Description"
+      }
+    },
+    "url": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "URL"
+      }
+    }
+  }
+}
