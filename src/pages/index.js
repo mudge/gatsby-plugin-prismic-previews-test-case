@@ -1,4 +1,5 @@
 import * as React from "react";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 
 // styles
 const pageStyles = {
@@ -181,4 +182,8 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default withPrismicPreview(IndexPage, [
+  {
+    repositoryName: "rpf-products",
+  },
+]);
